@@ -15,8 +15,8 @@ public class UnionIntersectionAnyArray {
         LinkedList<Integer> union = getUnion(array1, array2);
         LinkedList<Integer> intersection = getIntersection(array1, array2);
 
-        System.out.println("union : " + union.toString());
-        System.out.println("intersection : " + intersection.toString());
+        System.out.println("union : " + union);
+        System.out.println("intersection : " + intersection);
     }
 
     private static LinkedList<Integer> getIntersection(int[] array1, int[] array2) {
@@ -40,7 +40,6 @@ public class UnionIntersectionAnyArray {
 
     private static LinkedList<Integer> getUnion(int[] array1, int[] array2) {
         Set<Integer> set = new HashSet<>();
-        LinkedList<Integer> union = new LinkedList<>();
 
         for( int element : array1 ) {
             set.add(element);
@@ -50,9 +49,7 @@ public class UnionIntersectionAnyArray {
             set.add(element);
         }
 
-        for (int element : set) {
-            union.add(element);
-        }
+        LinkedList<Integer> union = new LinkedList<>(set);
 
         return union;
     }
