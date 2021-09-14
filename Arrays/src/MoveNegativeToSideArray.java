@@ -5,16 +5,16 @@ public class MoveNegativeToSideArray {
 
         printArray(array);
 
-        array = moveNegativeToSideArray(array);
+        moveNegativeToSideArray(array);
         System.out.println();
         printArray(array);
     }
 
-    private static int[] moveNegativeToSideArray(int[] array) {
+    private static void moveNegativeToSideArray(int[] array) {
         int negativeCount = 0;
         int positiveCount = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < 0) {
+        for (int j : array) {
+            if (j < 0) {
                 negativeCount++;
             } else {
                 positiveCount++;
@@ -27,11 +27,11 @@ public class MoveNegativeToSideArray {
         int negativeIndex = 0;
         int positiveIndex = 0;
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < 0) {
-                negativeArray[negativeIndex++] = array[i];
+        for (int j : array) {
+            if (j < 0) {
+                negativeArray[negativeIndex++] = j;
             } else {
-                positiveArray[positiveIndex++] = array[i];
+                positiveArray[positiveIndex++] = j;
             }
         }
 
@@ -45,12 +45,11 @@ public class MoveNegativeToSideArray {
             array[index++] = positiveArray[i];
         }
 
-        return array;
     }
 
     private static void printArray(int[] array) {
-        for(int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + ", ");
+        for (int j : array) {
+            System.out.print(j + ", ");
         }
     }
 }
